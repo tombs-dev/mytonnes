@@ -1,6 +1,155 @@
+:root {
+  /* Colors */
+  --color-bg-primary: rgb(17, 24, 39);
+  --color-bg-secondary: rgb(31, 41, 55);
+  --color-text-primary: rgb(229, 231, 235);
+  --color-text-secondary: rgb(156, 163, 175);
+  --color-accent: #f97316;
+  --color-success: rgba(16, 185, 129, 0.2);
+  --color-success-text: rgb(110, 231, 183);
+  --color-border: rgb(55, 65, 81);
+  
+  /* Spacing */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  
+  /* Typography */
+  --font-sm: 1rem;
+  --font-md: 1.2rem;
+  --font-lg: 1.75rem;
+  --font-xl: 2.5rem;
+  
+  /* Effects */
+  --radius: 0.5rem;
+  --shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Base styles */
 body {
-    margin: 0;
-    font-family: var(--font-geist-sans), Arial, sans-serif;
-    background-color: rgb(249, 250, 251);
-  }
+  margin: 0;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Layout */
+.container {
+  padding: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Typography */
+.heading {
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.heading-xl {
+  font-size: var(--font-xl);
+}
+
+.heading-lg {
+  font-size: var(--font-lg);
+}
+
+.heading-md {
+  font-size: var(--font-md);
+}
+
+.text-body {
+  font-size: var(--font-md);
+  margin-bottom: var(--space-xl);
+  color: var(--color-text-secondary);
+}
+
+.text-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+/* Components */
+.card {
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Form elements */
+input, .input-field {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.button {
+  border: none;
+  font-size: var(--font-sm);
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.button-primary {
+  background-color: var(--color-accent);
+  color: --color-text-secondary;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.button-large {
+  padding: var(--space-sm) var(--space-lg);
+}
+
+/* Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb {
+  margin-bottom: var(--space-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+.mt {
+  margin-top: var(--space-md);
+}
+
+/* Alert */
+.alert {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+}
+
+.alert-success {
+  background-color: var(--color-success);
+  color: var(--color-success-text);
+  border: 1px solid var(--color-success);
+}
   
