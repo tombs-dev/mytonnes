@@ -1,14 +1,15 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-// List of public routes that don't require authentication
-const publicRoutes = createRouteMatcher([
-  '/', '/login', '/signup', 
-  // Add any other public routes here
-]);
+// Define which routes should be protected (require authentication)
+const isProtectedRoute = createRouteMatcher(['/dashboard(.*)'])
 
-export default clerkMiddleware({
-  publicRoutes // no idea what this is
-});
+// Use the middleware with the auth parameter
+export default clerkMiddleware((auth, req) => {
+  // If the request is for a protected route, enforce authentication
+  if (isProtectedRoute(req)) {
+    auth.protect()
+  }
+})
 
 export const config = {
   matcher: [
@@ -17,4 +18,4 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],
-};
+}
